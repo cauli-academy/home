@@ -1,4 +1,5 @@
 package org.example.rooms;
 
-public class Bathroom {
+public class Bathroom extends Room {
+
 }

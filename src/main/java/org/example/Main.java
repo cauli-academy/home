@@ -1,12 +1,13 @@
 package org.example;
 
-import org.example.rooms.Bedroom;
+import org.example.rooms.Kitchen;
 
 public class Main {
     public static void main(String[] args) {
-        Bedroom bigBedroom = new Bedroom();
-        bigBedroom.goToBedroom();
-        bigBedroom.checkIfRoom();
-        bigBedroom.checkOnBed();
+        Kitchen kitchen = new Kitchen();
+        ChildRoom childRoom = new ChildRoom();
+        System.out.println(childRoom);
+        System.out.println(kitchen);
+
     }
 }

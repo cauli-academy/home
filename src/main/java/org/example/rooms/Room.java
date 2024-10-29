@@ -1,12 +1,12 @@
 package org.example.rooms;
 
+import org.example.objects.Window;
+
 public class Room {
 
-    public Room(){
-        System.out.println("Room created");
-    }
+    protected Window window = new Window();
 
-    public void checkIfRoom(){
-        System.out.println("I am in room");
+    public Room() {
+        System.out.println("Room created");
     }
 }

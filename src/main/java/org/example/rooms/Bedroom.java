@@ -5,18 +5,20 @@ import org.example.furniture.Wardrobe;
 
 public class Bedroom extends Room {
 
-    public Bed bigBed = new Bed();
-    public Wardrobe bigWardrobe;
+    private Bed bigBed = new Bed(45.5, 160, 200, true);
+    private Bed smallBed = new Bed(45.5, 90, 200);
+    private Wardrobe bigWardrobe;
 
     public Bedroom() {
         System.out.println("Bedroom created");
     }
 
-    public void goToBedroom() {
-        System.out.println("I am in bedroom");
+    public void takePlaceOnBigBed(){
+        bigBed.setHasPlace(false);
     }
 
     public void checkOnBed(){
-        System.out.println("height " + bigBed.height + ", width " + bigBed.width + ", isOpen " + bigBed.isOpen + ", name " + bigBed.name);
+        System.out.println(bigBed);
+        System.out.println(smallBed);
     }
 }

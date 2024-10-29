@@ -1,4 +1,4 @@
 package org.example.rooms;
 
-public class Corridor {
+public class Corridor extends Room {
 }
