@@ -1,29 +1,58 @@
 package org.example.furniture;
 
-public class Bed extends Furniture {
+import lombok.*;
 
-    private boolean hasPlace;
+@Getter
+@Setter
+@AllArgsConstructor  // Tworzy konstruktor z wszystkimi parametrami
+@NoArgsConstructor   // Tworzy konstruktor bezparametrowy
+@ToString            // Tworzy metodę toString
+public class Bed {
+    private String material;  // materiał, z jakiego wykonane jest łóżko
+    private int capacity;     // liczba osób, które mogą spać na łóżku
+    private boolean isOccupied; // czy łóżko jest zajęte
+    private boolean isMade;    // czy łóżko jest zaścielone
+    private int comfortLevel;  // poziom komfortu łóżka (od 1 do 10)
 
-    public Bed(double height, double width, double depth, boolean hasPlace) {
-        super(height, width, depth);
-        this.hasPlace = hasPlace;
+    // Interakcje z łóżkiem
+
+    // Spanie na łóżku
+    public void sleep() {
+        if (isOccupied) {
+            System.out.println("Łóżko jest już zajęte!");
+        } else {
+            isOccupied = true;
+            System.out.println("Położono się do łóżka. Zrelaksuj się!");
+        }
     }
 
-    public Bed(double height, double width, double depth) {
-        super(height, width, depth);
-        this.hasPlace = true;
+    // Wstawianie pościeli (zaścielanie łóżka)
+    public void makeBed() {
+        if (!isMade) {
+            isMade = true;
+            System.out.println("Łóżko zostało zaścielone.");
+        } else {
+            System.out.println("Łóżko jest już zaścielone.");
+        }
     }
 
-    public Bed(double height, double width, double depth, int numberOfPlaces, int numberOfTakenPlaces){
-        super(height, width, depth);
-        this.hasPlace = numberOfPlaces > numberOfTakenPlaces;
+    // Opuszczanie łóżka
+    public void wakeUp() {
+        if (isOccupied) {
+            isOccupied = false;
+            System.out.println("Wstałeś z łóżka. Dzień dobry!");
+        } else {
+            System.out.println("Nie leżysz na łóżku.");
+        }
     }
 
-    public void setHasPlace(boolean hasPlace) {
-        this.hasPlace = hasPlace;
+    // Sprawdzenie komfortu łóżka
+    public void checkComfort() {
+        System.out.println("Poziom komfortu łóżka: " + comfortLevel + "/10");
     }
 
-    public String toString() {
-        return "height: " + getHeight() + ", width: " + getWidth() + ", depth: " + getDepth() + ", hasPlace: " + hasPlace;
+    // Wyświetlanie informacji o łóżku
+    public void displayInfo() {
+        System.out.println(this);
     }
 }
