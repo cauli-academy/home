@@ -1,14 +1,14 @@
 package org.example.furniture;
-
-import lombok.Data;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
+//
+//import lombok.Data;
+//import lombok.AllArgsConstructor;
+//import lombok.NoArgsConstructor;
 
 import java.util.List;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
+//@Data
+//@AllArgsConstructor
+//@NoArgsConstructor
 public class Oven {
     private String brand;            // Marka piekarnika
     private int temperature;         // Temperatura piekarnika (w stopniach Celsjusza)

@@ -1,12 +1,12 @@
 package org.example.furniture;
 
-import lombok.*;
-
-@Getter
-@Setter
-@AllArgsConstructor  // Tworzy konstruktor z wszystkimi parametrami
-@NoArgsConstructor   // Tworzy konstruktor bezparametrowy
-@ToString            // Tworzy metodę toString
+//import lombok.*;
+//
+//@Getter
+//@Setter
+//@AllArgsConstructor  // Tworzy konstruktor z wszystkimi parametrami
+//@NoArgsConstructor   // Tworzy konstruktor bezparametrowy
+//@ToString            // Tworzy metodę toString
 public class Bed {
     private String material;  // materiał, z jakiego wykonane jest łóżko
     private int capacity;     // liczba osób, które mogą spać na łóżku

@@ -1,14 +1,14 @@
 package org.example.furniture;
 
-import lombok.Data;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-
+//import lombok.Data;
+//import lombok.AllArgsConstructor;
+//import lombok.NoArgsConstructor;
+//
 import java.util.List;
-
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
+//
+//@Data
+//@AllArgsConstructor
+//@NoArgsConstructor
 public class Fridge {
     private String brand;            // Marka lodówki
     private int capacity;            // Pojemność w litrach
