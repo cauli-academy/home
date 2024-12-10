@@ -1,46 +1,53 @@
 package org.example;
 
-import org.example.rooms.Room;
+import org.example.enums.Rooms;
+import org.example.rooms.*;
 
 import java.util.Scanner;
 
-import static org.example.enums.Rooms.*;
-
 public class Main {
 
-    private static final Room bathroom = new Room(BATHROOM);
-    private static final Room bedroom = new Room(BEDROOM);
-    private static final Room kitchen = new Room(KITCHEN);
-    private static final Room corridor = new Room(CORRIDOR);
-    private static final Room livingRoom = new Room(LIVING_ROOM);
+    private static final Room bathroom = Bathroom.getInstance();
+    private static final Room bedroom = Bedroom.getInstance();
+    private static final Room kitchen = Kitchen.getInstance();
+    private static final Room corridor = Corridor.getInstance();
+    private static final Room livingRoom = LivingRoom.getInstance();
 
-    private static Room destinationRoom = corridor;
+    private static Room currentRoom = corridor;
 
     public static void main(String[] args) {
         System.out.println("Witaj w grze!");
 
         do {
-            destinationRoom.printRoomInfo();
+            currentRoom.printRoomInfo();
+            currentRoom.printAvailableRooms();
             Scanner scanner = new Scanner(System.in);
             String userValue = scanner.nextLine();
-            destinationRoom = calculateRoom(userValue);
-        } while (destinationRoom != null);
+            currentRoom = calculateRoom(userValue);
+        } while (currentRoom != null);
 
         System.out.println("Zła wartość, koniec gry");
     }
 
     private static Room calculateRoom(String userValue) {
-        return switch (userValue) {
-            case "1" -> isCorridor() ? kitchen : null;
-            case "2" -> isCorridor() ? bathroom : null;
-            case "3" -> isCorridor() ? livingRoom : null;
-            case "4" -> isCorridor() ? bedroom : null;
-            case "5" -> corridor;
-            default -> null;
-        };
-    }
+        int userChoice;
+        try {
+            userChoice = Integer.parseInt(userValue);
+        } catch (Exception e) {
+            return null;
+        }
 
-    public static boolean isCorridor() {
-        return destinationRoom.isCorridor();
+        Rooms calculatedRoom = currentRoom.calculateRoom(userChoice);
+
+        if(calculatedRoom != null) {
+            return switch (calculatedRoom) {
+                case KITCHEN -> kitchen;
+                case BEDROOM -> bedroom;
+                case BATHROOM -> bathroom;
+                case CORRIDOR -> corridor;
+                case LIVING_ROOM -> livingRoom;
+            };
+        }
+        return null;
     }
 }

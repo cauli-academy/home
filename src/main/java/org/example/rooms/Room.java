@@ -2,9 +2,9 @@ package org.example.rooms;
 
 import org.example.enums.Rooms;
 
-import static org.example.enums.Rooms.*;
+import java.util.List;
 
-public class Room {
+public abstract class Room {
 
     private final Rooms roomName;
 
@@ -15,18 +15,20 @@ public class Room {
     public void printRoomInfo() {
         System.out.println("Jesteś w pomieszczeniu: " + roomName.getRoomName());
         System.out.println("Do jakiego pomieszczenia chciałbyś przejść?");
+    }
 
-        if (isCorridor()) {
-            System.out.println(KITCHEN);
-            System.out.println(BATHROOM);
-            System.out.println(LIVING_ROOM);
-            System.out.println(BEDROOM);
-        } else {
-            System.out.println(CORRIDOR);
+    abstract List<Rooms> getAvailableRooms();
+
+    public void printAvailableRooms() {
+        for (int index = 1; index <= getAvailableRooms().size(); index++) {
+            int roomIndex = index - 1;
+            String valueToPrint = index + ". " + getAvailableRooms().get(roomIndex).getRoomName();
+            System.out.println(valueToPrint);
         }
     }
 
-    public boolean isCorridor() {
-        return roomName.equals(CORRIDOR);
+    public Rooms calculateRoom(int userChoice) {
+        int roomIndex = userChoice - 1;
+        return userChoice <= getAvailableRooms().size() ? getAvailableRooms().get(roomIndex) : null;
     }
 }

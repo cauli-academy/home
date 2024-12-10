@@ -1,16 +1,16 @@
 package org.example.furniture;
 
-//import lombok.Getter;
-//import lombok.Setter;
-//import lombok.AllArgsConstructor;
-//import lombok.NoArgsConstructor;
-//import lombok.ToString;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
-//@Getter
-//@Setter
-//@AllArgsConstructor  // Tworzy konstruktor z wszystkimi parametrami
-//@NoArgsConstructor   // Tworzy konstruktor bezparametrowy
-//@ToString            // Tworzy metodę toString
+@Getter
+@Setter
+@AllArgsConstructor  // Tworzy konstruktor z wszystkimi parametrami
+@NoArgsConstructor   // Tworzy konstruktor bezparametrowy
+@ToString            // Tworzy metodę toString
 public class Wardrobe {
     private String material;      // materiał, z jakiego wykonana jest szafa (np. drewno, metal)
     private int numberOfDoors;    // liczba drzwi w szafie
