@@ -5,13 +5,13 @@ import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-public enum Rooms {
+public enum RoomType {
 
+    CORRIDOR("Korytarz"),
     KITCHEN("Kuchnia"),
     BATHROOM("Łazienka"),
     LIVING_ROOM("Salon"),
-    BEDROOM("Sypialnia"),
-    CORRIDOR("Korytarz");
+    BEDROOM("Sypialnia");
 
     private final String roomName;
 }
