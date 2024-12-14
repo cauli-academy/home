@@ -16,7 +16,7 @@ public abstract class Room {
 
     public void printRoomInfo() {
         System.out.println("Jesteś w pomieszczeniu: " + roomType.getRoomName());
-        System.out.println("Do jakiego pomieszczenia chciałbyś przejść lub jaką akcję wykonać?");
+        System.out.println("Do jakiego pomieszczenia chciałbyś przejść?");
         printAvailableRooms();
     }
 
