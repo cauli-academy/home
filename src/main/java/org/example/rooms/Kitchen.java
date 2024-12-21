@@ -1,11 +1,8 @@
 package org.example.rooms;
 
-import org.example.enums.Rooms;
-
 import java.util.List;
 
-import static org.example.enums.Rooms.CORRIDOR;
-import static org.example.enums.Rooms.KITCHEN;
+import static org.example.enums.RoomType.KITCHEN;
 
 public class Kitchen extends Room {
 
@@ -27,7 +24,7 @@ public class Kitchen extends Room {
     //
 
     @Override
-    List<Rooms> getAvailableRooms() {
-        return List.of(CORRIDOR);
+    List<Room> getAvailableRooms() {
+        return List.of(Corridor.getInstance());
     }
 }
