@@ -1,10 +1,13 @@
 package org.example.rooms;
 
+import org.example.interfaces.RoomWithWater;
+import org.example.interfaces.RoomWithWindow;
+
 import java.util.List;
 
 import static org.example.enums.RoomType.BATHROOM;
 
-public class Bathroom extends Room {
+public class Bathroom extends Room implements RoomWithWindow, RoomWithWater {
 
     // Singleton
 
@@ -26,5 +29,20 @@ public class Bathroom extends Room {
     @Override
     List<Room> getAvailableRooms() {
         return List.of(Corridor.getInstance());
+    }
+
+    @Override
+    public void interactWithObjects() {
+
+    }
+
+    @Override
+    public void describeWindowView() {
+
+    }
+
+    @Override
+    public void turnWaterOn() {
+
     }
 }

@@ -27,4 +27,9 @@ public class Corridor extends Room {
     List<Room> getAvailableRooms() {
         return List.of(Kitchen.getInstance(), LivingRoom.getInstance(), Bedroom.getInstance(), Bathroom.getInstance());
     }
+
+    @Override
+    public void interactWithObjects() {
+
+    }
 }

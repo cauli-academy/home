@@ -6,8 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-@Getter
-@Setter
+//@Getter
+//@Setter
 @AllArgsConstructor  // Tworzy konstruktor z wszystkimi parametrami
 @NoArgsConstructor   // Tworzy konstruktor bezparametrowy
 @ToString            // Tworzy metodę toString

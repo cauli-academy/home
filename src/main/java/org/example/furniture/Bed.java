@@ -2,8 +2,8 @@ package org.example.furniture;
 
 import lombok.*;
 
-@Getter
-@Setter
+//@Getter
+//@Setter
 @AllArgsConstructor  // Tworzy konstruktor z wszystkimi parametrami
 @NoArgsConstructor   // Tworzy konstruktor bezparametrowy
 @ToString            // Tworzy metodę toString

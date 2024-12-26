@@ -11,7 +11,7 @@ import java.util.List;
 @NoArgsConstructor
 public class Oven {
     private String brand;            // Marka piekarnika
-    private int temperature;         // Temperatura piekarnika (w stopniach Celsjusza)
+    private String temperature;         // Temperatura piekarnika (w stopniach Celsjusza)
     private boolean isOn;            // Czy piekarnik jest włączony
     private boolean isPreheated;     // Czy piekarnik jest wstępnie podgrzany
     private List<String> contents;   // Zawartość piekarnika (np. lista przedmiotów, które się pieką)
@@ -32,7 +32,7 @@ public class Oven {
         isOn = !isOn;
     }
 
-    public void preheatOven(int targetTemperature) {
+    public void preheatOven(String targetTemperature) {
         if (isOn) {
             temperature = targetTemperature;
             isPreheated = true;

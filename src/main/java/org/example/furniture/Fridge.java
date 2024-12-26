@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -13,7 +14,7 @@ public class Fridge {
     private String brand;            // Marka lodówki
     private int capacity;            // Pojemność w litrach
     private boolean isOn;            // Czy lodówka jest włączona
-    private List<String> contents;   // Zawartość lodówki (lista przedmiotów)
+    private List<String> contents = new ArrayList<>();   // Zawartość lodówki (lista przedmiotów)
 
     // Przykład dodatkowych metod biznesowych:
 
